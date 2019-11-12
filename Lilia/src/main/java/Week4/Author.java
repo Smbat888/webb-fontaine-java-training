@@ -14,6 +14,7 @@ public class Author {
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }
@@ -25,10 +26,11 @@ public class Author {
                 name.equals(author.name) &&
                 surname.equals(author.surname)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
+
     @Override
     public String toString() {
         return String.format("{ name: %s,surname: %s, age: %d}", name, surname, age);

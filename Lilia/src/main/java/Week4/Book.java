@@ -28,6 +28,7 @@ public class Book {
     public String getCategory() {
         return category;
     }
+
     public LocalDate getReleaseDate() {
         return releaseDate;
     }

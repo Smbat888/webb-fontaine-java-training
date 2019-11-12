@@ -1,4 +1,5 @@
 package Week4;
+
 import java.time.LocalDate;
 import java.util.Arrays;
 
@@ -6,8 +7,8 @@ public class LibraryAPI {
     public static Author[] getAuthorsData() {
         Author authors[] = new Author[10];
         for (int i = 0; i < authors.length; i++) {
-            Author author = new Author(LibraryDataRepo.names[(int) (Math.random() * LibraryDataRepo.names.length)],
-                    LibraryDataRepo.surnames[(int) (Math.random() * LibraryDataRepo.surnames.length)],
+            Author author = new Author(LibraryDataRepo.names[(i + 1) % 7],
+                    LibraryDataRepo.surnames[(i + 1) % 7],
                     (int) (Math.random() * 100));
             authors[i] = author;
         }
@@ -15,12 +16,12 @@ public class LibraryAPI {
     }
 
     public static Book[] getBookData(Author authors[]) {
-        Book books[] = new Book[10];
+        Book books[] = new Book[100];
         for (int i = 0; i < books.length; i++) {
-            Book book = new Book(LibraryDataRepo.titles[(int) (Math.random() * LibraryDataRepo.titles.length)],
+            Book book = new Book(LibraryDataRepo.titles[(i + 1) % 7],
                     authors[(int) (Math.random() * authors.length)],
                     Book.createRandomDate(1900, 2000),
-                    LibraryDataRepo.categories[(int) (Math.random() * LibraryDataRepo.categories.length)],
+                    LibraryDataRepo.categories[(i + 1) % 7],
                     (float) Math.random() * 10);
             books[i] = book;
         }
@@ -48,41 +49,42 @@ public class LibraryAPI {
         return givenBooks;
     }
 
-    public static boolean isExistNameAndSurnameInRepo(String name, String surname) {
-        for (int i = 0; i < LibraryDataRepo.names.length; i++) {
-            if (name.equals(LibraryDataRepo.names[i])) {
-                for (int j = 0; j < LibraryDataRepo.surnames.length; j++) {
-                    if (surname.equals(LibraryDataRepo.surnames[i])) {
-                        return true;
-                    }
-                }
+
+    public static int getAllBooksLength(Book[] books, String name, String surname) {
+        int length = 0;
+        for (int i = 0; i < books.length; i++) {
+            if ((books[i].getAuthor().getName().equals(name) || books[i].getAuthor().getSurname().equals(surname))) {
+                length++;
             }
         }
-        return false;
+        return length;
     }
 
-    public static Book[] getAllBooksOfOneAuthor(String name, String surname) {
-        Book allBooks[] = new Book[10];
-        if (isExistNameAndSurnameInRepo(name, surname)) {
-            for (int i = 0; i < allBooks.length; i++) {
-                Book book = new Book(LibraryDataRepo.titles[(int) (Math.random() * LibraryDataRepo.titles.length)],
-                        new Author(name, surname, 78),
-                        Book.createRandomDate(1900, 2000),
-                        LibraryDataRepo.categories[(int) (Math.random() * LibraryDataRepo.categories.length)],
-                        (float) Math.random() * 10);
-                allBooks[i] = book;
-            }
-        }
-        return allBooks;
-    }
-
-    public static Book[] getTopThreeBooks(Book allBooks[]) {
+    public static Book[] getTopThreeBooks(Book books[], String name, String surname) {
+        Book allBooks[] = new Book[getAllBooksLength(books, name, surname)];
         Book topThreeBooks[] = new Book[3];
         int j = 0;
+        int k = 0;
+        boolean hasFound = false;
+        if (name.length() <= 2 || surname.length() <= 2) {
+            System.out.println("Please enter 3 characters");
+            return new Book[0];
+        }
+        for (int i = 0; i < books.length; i++) {
+            if ((books[i].getAuthor().getName().equals(name) || books[i].getAuthor().getSurname().equals(surname))) {
+                allBooks[j] = books[i];
+                j++;
+                hasFound = true;
+            }
+        }
+        if (!hasFound) {
+            System.out.println("No Result");
+            return new Book[0];
+        }
         Arrays.sort(allBooks, LibraryAPI::compareBooks);
-        for (int i = (allBooks.length)-1; i >= (allBooks.length)-3; i--) {
-            topThreeBooks[j] = allBooks[i];
-            j++;
+        for (int i = (allBooks.length) - 1; i >= (allBooks.length) - 3; i--) {
+            topThreeBooks[k] = allBooks[i];
+            k++;
         }
         return topThreeBooks;
     }
