@@ -17,4 +17,15 @@ public class AuthorAPI {
         }
         return authorName;
     }
+
+    public static Author[] matchinNamesToGivenString(String string) {
+        int j = 0;
+        Author matchinNamesToGivenString[] = new Author[AuthorRepository.getData().length];
+        for (int i = 0; i < AuthorRepository.getData().length; i++) {
+            if (string.equals(AuthorRepository.getData()[i].name)) {
+                matchinNamesToGivenString[j++] = AuthorRepository.getData()[i];
+            }
+        }
+        return matchinNamesToGivenString;
+    }
 }

@@ -15,5 +15,17 @@ public class Main {
                 System.out.println(authorBooks[i].name);
             }
         }
+        System.out.println("-------------------");
+
+//        for (Book book:BookAPI.getTop3BooksOfGivenAuthor(AuthorRepository.getData()[(int) Math.random() * 3])) {
+//            System.out.println(book.name);
+//        }
+
+        for (Book book:  BookAPI.getNamesOfMatchingBook("Sasna Crer")
+             ) {
+
+        }
+        BookAPI.getReleaseDtaesOfArrays();
+
     }
 }

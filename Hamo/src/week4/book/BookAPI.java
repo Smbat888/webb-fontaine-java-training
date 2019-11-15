@@ -46,5 +46,25 @@ public class BookAPI {
         return top3Books;
     }
 
+    public static Book[] getNamesOfMatchingBook(String string) {
+        Book getNamesOfMatchingBook[] = new Book[BookRepository.getData().length];
+        int j = 0;
+        for (int i = 0; i < BookRepository.getData().length; i++) {
+            if (string.equals(BookRepository.getData()[i].name)) {
+                getNamesOfMatchingBook[j++] = BookRepository.getData()[i];
+            }
+        }
+        return getNamesOfMatchingBook;
+    }
 
+    public static void getReleaseDtaesOfArrays(){
+        Book[] books = new Book[getAllBooks().length];
+        for (int i = 0; i < getAllBooks().length; i++) {
+            books[i] = getAllBooks()[i];
+            System.out.println(books[i].createRandomDate(1993,2019));
+
+        }
+    }
+
+    
 }

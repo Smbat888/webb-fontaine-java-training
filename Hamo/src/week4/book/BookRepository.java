@@ -17,7 +17,6 @@ public class BookRepository {
             book.author = authors[(int) (Math.random() * 3)];
             books[i] = book;
         }
-
         return books;
     }
 
