@@ -10,6 +10,7 @@ public class Point {
     private double x;
     private double y;
 
+
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
@@ -23,45 +24,27 @@ public class Point {
         return y;
     }
 
-//    static double d;
-//
-//    public static void main(String[] args)
-//    {
-//
-//        // bottom-left and top-right
-//        // corners of rectangle
-//        int x1 = 0, y1 = 0,
-//                x2 = 10, y2 = 8;
-//
-//        // given point
-//        int x = 1, y = 5;
-//
-//        // function call
-//        if (findPoint(x1, y1, x2, y2, x, y))
-//            System.out.println("Yes");
-//        else
-//            System.out.println("No");
-//    }
-//
-//    public static void distanceBetweenPoints(double pointOneX, double pointOneY, double pointTwoX, double pointTwoY) {
-//        d = Math.sqrt(((pointTwoX - pointOneX) * (pointTwoX - pointOneX))) + ((pointTwoY - pointOneY) * (pointTwoY - pointOneY));
-//        System.out.println("the lenght is " + d);
-//    }
-//
-//    public static void mediumDot(double pointOneX, double pointOneY, double pointTwoX, double pointTwoY) {
-//        double mediumX = (pointOneX + pointTwoX) / 2;
-//        double mediumY = (pointOneY + pointTwoY) / 2;
-//        System.out.println("mediumX is :" + mediumX + "medium Y is: " + mediumY);
-//    }
-//
-//    static boolean findPoint(double pointOneX, double pointOneY, double pointTwoX, double pointTwoY,
-//                             double pointUnknownX, double pointUnknownY) {
-//        if (pointUnknownX > pointOneX && pointUnknownX < pointTwoX &&
-//                pointUnknownY > pointOneY && pointUnknownY < pointTwoY) {
-//            return true;
-//        }
-//        return false;
-//    }
+    static double d;
+
+
+    public static boolean findPoint(Point point, Point point2, Point pointUnknown) {
+        if (pointUnknown.getX() > point.getX() && pointUnknown.getX() < point2.getX() &&
+                pointUnknown.getY() > point.getY() && pointUnknown.getY() < point2.getY()) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void distanceBetweenPoints(Point point, Point point2) {
+        d = Math.sqrt(((point2.getX() - point.getX()) * (point2.getX() - point.getX()))) + ((point2.getY() - point.getY()) * (point2.getY() - point.getY()));
+        System.out.println("the lenght is " + d);
+    }
+
+    public static void mediumDot(Point point, Point point2) {
+        double mediumX = (point.getX() + point2.getX()) / 2;
+        double mediumY = (point.getY() + point2.getY()) / 2;
+        System.out.println("mediumX is :" + mediumX + "medium Y is: " + mediumY);
+    }
 
 
 }
