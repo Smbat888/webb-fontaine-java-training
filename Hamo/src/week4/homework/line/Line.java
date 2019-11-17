@@ -27,7 +27,4 @@ public class Line {
         return false;
     }
 
-    //TODO POINTERI ARRAY
-
-
 }

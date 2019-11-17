@@ -15,18 +15,19 @@ public class Main {
         System.out.println(line.isPointOnLine(point));
 
         Point point2 = new Point(4.5, 5.5);
-        Point pointUnknow = new Point(6.3, 2.5);
+        Point pointUnknown = new Point(6.3, 2.5);
 
 
-        if (Point.findPoint(point, point2, pointUnknow))
+        if (Point.findPoint(point, point2, pointUnknown)) {
             System.out.println("Yes");
-        else
+        } else {
             System.out.println("No");
-
+        }
         Point.distanceBetweenPoints(point, point2);
 
         Point.mediumDot(point, point2);
-
+//print  point in X,Y axis
+        System.out.println("---------");
         for (int i = 20; i >= 0; i--) {
             if (i != 20) {
                 System.out.print("  ");
