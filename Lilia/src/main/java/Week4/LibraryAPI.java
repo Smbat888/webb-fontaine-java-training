@@ -4,6 +4,19 @@ import java.time.LocalDate;
 import java.util.Arrays;
 
 public class LibraryAPI {
+    private LibraryAPI(){
+    }
+
+    private static int createRandomIntBetween(int first, int second) {
+        return first + (int) Math.round(Math.random() * (second - first));
+    }
+
+    public static LocalDate createRandomDate(int startYear, int endYear) {
+        int day = createRandomIntBetween(1, 28);
+        int month = createRandomIntBetween(1, 12);
+        int year = createRandomIntBetween(startYear, endYear);
+        return LocalDate.of(year, month, day);
+    }
     public static Author[] getAuthorsData() {
         Author authors[] = new Author[10];
         for (int i = 0; i < authors.length; i++) {
@@ -20,7 +33,7 @@ public class LibraryAPI {
         for (int i = 0; i < books.length; i++) {
             Book book = new Book(LibraryDataRepo.titles[(i + 1) % 7],
                     authors[(int) (Math.random() * authors.length)],
-                    Book.createRandomDate(1900, 2000),
+                    createRandomDate(1900, 2000),
                     LibraryDataRepo.categories[(i + 1) % 7],
                     (float) Math.random() * 10);
             books[i] = book;
@@ -53,7 +66,7 @@ public class LibraryAPI {
     public static int getAllBooksLength(Book[] books, String name, String surname) {
         int length = 0;
         for (int i = 0; i < books.length; i++) {
-            if ((books[i].getAuthor().getName().equals(name) || books[i].getAuthor().getSurname().equals(surname))) {
+            if ((books[i].getAuthor().getName().equals(name) && books[i].getAuthor().getSurname().equals(surname))) {
                 length++;
             }
         }
@@ -68,10 +81,10 @@ public class LibraryAPI {
         boolean hasFound = false;
         if (name.length() <= 2 || surname.length() <= 2) {
             System.out.println("Please enter 3 characters");
-            return new Book[0];
+            return null;
         }
         for (int i = 0; i < books.length; i++) {
-            if ((books[i].getAuthor().getName().equals(name) || books[i].getAuthor().getSurname().equals(surname))) {
+            if ((books[i].getAuthor().getName().equals(name) && books[i].getAuthor().getSurname().equals(surname))) {
                 allBooks[j] = books[i];
                 j++;
                 hasFound = true;
@@ -79,7 +92,7 @@ public class LibraryAPI {
         }
         if (!hasFound) {
             System.out.println("No Result");
-            return new Book[0];
+            return null;
         }
         Arrays.sort(allBooks, LibraryAPI::compareBooks);
         for (int i = (allBooks.length) - 1; i >= (allBooks.length) - 3; i--) {
@@ -115,7 +128,7 @@ public class LibraryAPI {
         boolean hasFound = false;
         if (input.length() <= 2) {
             System.out.println("Please enter 3 characters");
-            return new Author[0];
+            return null;
         }
         for (int i = 0; i < authors.length; i++) {
             if ((authors[i].getName().contains(input) || authors[i].getSurname().contains(input))) {
@@ -146,7 +159,7 @@ public class LibraryAPI {
         boolean hasFound = false;
         if (input.length() <= 2) {
             System.out.println("Please enter 3 Characters");
-            return new Book[0];
+            return null;
         }
         for (int i = 0; i < books.length; i++) {
             if ((books[i].getTitle().contains(input) || books[i].getCategory().contains(input))) {
@@ -174,7 +187,7 @@ public class LibraryAPI {
     public static Book[] getBooksMatchingTheDate(Book[] books, LocalDate start, LocalDate end) {
         if (start.compareTo(end) > 0) {
             System.out.println("Start date can't be greater than end date");
-            return new Book[0];
+            return null;
         }
         Book[] booksMatchingDate = new Book[getBooksMatchingTheDateLength(books, start, end)];
         if (getBooksMatchingTheDateLength(books, start, end) == 0) {

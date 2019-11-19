@@ -41,15 +41,4 @@ public class Book {
     public String toString() {
         return String.format("{ title: %s,author: %s, release date: %s, rating: %.2f,category: %s }", title, author.toString(), releaseDate, rating, category);
     }
-
-    private static int createRandomIntBetween(int first, int second) {
-        return first + (int) Math.round(Math.random() * (second - first));
-    }
-
-    public static LocalDate createRandomDate(int startYear, int endYear) {
-        int day = createRandomIntBetween(1, 28);
-        int month = createRandomIntBetween(1, 12);
-        int year = createRandomIntBetween(startYear, endYear);
-        return LocalDate.of(year, month, day);
-    }
 }

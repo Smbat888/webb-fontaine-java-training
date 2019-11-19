@@ -7,8 +7,9 @@ public class LibraryDataRepo {
     static String[] categories = {"Fantasy", "Thriller", "Historical", "Romance", "Social", "Comedy", "Horror"};
 
     public static void ArrayToString(Object[] array) {
-        for (Object object : array) {
-            System.out.println(object);
-        }
+        if (array != null)
+            for (Object object : array) {
+                System.out.println(object);
+            }
     }
 }

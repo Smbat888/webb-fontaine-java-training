@@ -22,7 +22,6 @@ public class Main {
         String name = sc.next();
         System.out.println("Enter Surname:");
         String surname = sc.next();
-        //generating new array with the given author for all books
         //get the top 3 books of the given author
         System.out.println("Top 3 books of requested author:");
         Book topThreeBooks[] = LibraryAPI.getTopThreeBooks(books, name, surname);
