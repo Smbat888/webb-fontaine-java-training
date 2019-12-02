@@ -1,4 +1,3 @@
-package ToDoList;
 public enum Role_5 {
     DEVELOPER,
     QA,

@@ -1,4 +1,3 @@
-package ToDoList;
 public class Unassigned_7 extends Engineer_4{  //instance ov unassigned a
     private static Unassigned_7 instance;  //uni name role instance
     private Unassigned_7(){

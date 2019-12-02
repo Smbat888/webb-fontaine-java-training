@@ -1,4 +1,3 @@
-package ToDoList;
 public enum Status_3 {
     TODO,
     IN_PROGRESS,
