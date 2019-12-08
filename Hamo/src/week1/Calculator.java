@@ -10,7 +10,7 @@ public class Calculator {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-calculator();
+        calculator();
     }
 
     public static void calculator() throws IOException {
