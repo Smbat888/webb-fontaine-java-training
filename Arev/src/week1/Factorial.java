@@ -12,9 +12,7 @@ public class Factorial {
     public static double factorial(int number){
         if ((number == 0)||(number == 1)){
             return 1;
-        } else if(number == 2){
-            return 2;
-        }else
+        } else
             return number*factorial(number-1);
     }
 }
