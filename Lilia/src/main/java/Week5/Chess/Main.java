@@ -2,19 +2,19 @@ package Week5.Chess;
 
 public class Main {
     public static void main(String[] args) {
-       Board.printBoard();
-        Tile tile=Board.tiles[1][1];
-        if (tile != null && !tile.isEmpty()){
-            tile.getPiece().move(tile,Board.tiles[1][3]);
-        }
-        System.out.println("================================");
         Board.printBoard();
-
-        Tile tile1=Board.tiles[1][5];
-        if (tile1 != null && !tile1.isEmpty()){
-            tile1.getPiece().move(tile1,Board.tiles[1][7]);
+        try {
+            Tile tile1 = Board.tiles[1][4];
+            Tile tile2 = Board.tiles[2][3];
+            if (tile1 != null && !tile1.isEmpty()) {
+                tile1.getPiece().move(tile1, tile2);
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println();
+            System.out.println("Invalid tile");
+        }finally {
+            System.out.println("==========================");
+            Board.printBoard();
         }
-        System.out.println("================================");
-        Board.printBoard();
     }
 }

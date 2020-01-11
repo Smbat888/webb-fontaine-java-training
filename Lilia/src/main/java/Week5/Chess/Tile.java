@@ -9,18 +9,18 @@ public class Tile {
     public Tile() {
     }
 
-    public Tile(int x, int y) {
+    private Tile(int x, int y) {
         this.y = y;
         this.x = x;
     }
 
-    public Tile(boolean empty, int x, int y) {
+    Tile(boolean empty, int x, int y) {
         this(x,y);
         this.empty = empty;
     }
 
 
-    public Tile(boolean empty, Piece piece, int x, int y) {
+    Tile(boolean empty, Piece piece, int x, int y) {
         this(x,y);
         this.empty = empty;
         this.piece = piece;
@@ -42,20 +42,21 @@ public class Tile {
         this.y = y;
     }
 
-    public void setEmpty(boolean empty) {
+    void setEmpty(boolean empty) {
         this.empty = empty;
     }
 
-    public Piece getPiece() {
+    Piece getPiece() {
         return piece;
     }
 
-    public void setPiece(Piece piece) {
+    void setPiece(Piece piece) {
         this.piece = piece;
     }
 
-    public boolean isEmpty() {
+    boolean isEmpty() {
         return (empty);
     }
+
 
 }

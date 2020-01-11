@@ -2,16 +2,16 @@ package Week5.Chess;
 
 public abstract class Piece {
     protected Color color;
-    protected int x1;
-    protected int y1;
+    protected int curX;
+    protected int curY;
 
-    public Piece() {
+    Piece() {
     }
 
-    public Piece(Color color,int x1, int y1) {
+    Piece(Color color, int curX, int curY) {
         this.color = color;
-        this.x1 = x1;
-        this.y1 = y1;
+        this.curX = curX;
+        this.curY = curY;
     }
 
     public Color getColor() {
@@ -22,24 +22,24 @@ public abstract class Piece {
         this.color = color;
     }
 
+    public int getCurX() {
+        return curX;
+    }
+
+    void setCurX(int curX) {
+        this.curX = curX;
+    }
+
+    public int getCurY() {
+        return curY;
+    }
+
+    void setCurY(int curY) {
+        this.curY = curY;
+    }
     abstract boolean canMove(Tile startTile, Tile endTile);
-
-    public int getX1() {
-        return x1;
-    }
-
-    public void setX1(int x1) {
-        this.x1 = x1;
-    }
-
-    public int getY1() {
-        return y1;
-    }
-
-    public void setY1(int y1) {
-        this.y1 = y1;
-    }
-
     abstract void move(Tile tile1, Tile tile2);
+    abstract String print();
+
 
 }
