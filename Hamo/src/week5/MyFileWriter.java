@@ -14,7 +14,7 @@ public class MyFileWriter {
     private static void writeIntoFile() {
         String content = "sth to write in file";
         try (FileOutputStream fileOutputStream = new FileOutputStream(new File("example.txt"));) {
-            //todo FileOutputStream -> used for binary data
+            // FileOutputStream -> used for binary data
 
             fileOutputStream.write(content.getBytes());
         } catch (IOException e) {
@@ -25,7 +25,7 @@ public class MyFileWriter {
     private static void writeIntoFile2() {
         String content = "sth to write in file 222  \n test1  \n test2 \n test3  \n test4  \n test 5";
         try (java.io.FileWriter myFileWriter = new java.io.FileWriter("example 2.txt")) {
-            //todo FileOutputStream -> used for binary data
+            // FileOutputStream -> used for binary data
             myFileWriter.write(content);
         } catch (IOException e) {
             e.printStackTrace();

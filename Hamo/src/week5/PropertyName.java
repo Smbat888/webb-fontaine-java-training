@@ -19,7 +19,6 @@ public class PropertyName {
         properties.setProperty("db", "mydb");
         properties.setProperty("host", "192.168.45.6");
         properties.setProperty("port", "8000");
-                                    //"C:/Users/Hmayak/Desktop/props.properties"
         try (FileWriter fileWriter = new FileWriter("props.properties")) {
             properties.store(fileWriter, "the server machine configs");
         } catch (IOException e) {

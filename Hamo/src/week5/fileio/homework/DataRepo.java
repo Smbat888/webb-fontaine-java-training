@@ -92,7 +92,7 @@ public class DataRepo {
         String[] listOfFiles = file.list();
         String[] filesByExtension = new String[listOfFiles.length];
         assert listOfFiles != null;
-        for (int i = 0; i < listOfFiles.length; i++) { //todo to ask Smbat after try catch filesByExtension displays can be null
+        for (int i = 0; i < listOfFiles.length; i++) {
             if (listOfFiles[i].toLowerCase().endsWith(fileFormat)) {
                 filesByExtension[i] = listOfFiles[i];
                 Helper.printArray(filesByExtension);
