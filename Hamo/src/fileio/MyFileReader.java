@@ -1,4 +1,4 @@
-package week5;
+package fileio;
 
 import java.io.FileReader;
 import java.io.IOException;

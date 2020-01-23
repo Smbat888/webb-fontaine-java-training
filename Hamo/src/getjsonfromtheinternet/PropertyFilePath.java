@@ -1,4 +1,4 @@
-package week6;
+package getjsonfromtheinternet;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,11 +9,9 @@ import java.util.Properties;
  */
 public class PropertyFilePath {
 
-    public static String get() {
+    public static String getUrl() {
         Properties properties = new Properties();
         try (FileReader fileReader = new FileReader("Hamo/resource/urlForHamo.properties")) {
-
-            System.out.println();
             properties.load(fileReader);
         } catch (IOException e) {
             e.printStackTrace();

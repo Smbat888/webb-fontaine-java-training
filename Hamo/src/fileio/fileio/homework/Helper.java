@@ -1,4 +1,4 @@
-package week5.fileio.homework;
+package fileio.fileio.homework;
 
 import java.io.FileReader;
 import java.io.IOException;

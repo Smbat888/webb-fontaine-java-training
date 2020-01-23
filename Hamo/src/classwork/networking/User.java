@@ -1,23 +1,14 @@
-package week6;
+package classwork.networking;
 
-
+/**
+ * Created by: Hmayak Atayan on 23 January, 2020
+ */
 public class User {
 
     public Integer userId;
     public Integer id;
     public String title;
     public Boolean completed;
-
-    public User() {
-    }
-
-    public User(Integer userId, Integer id, String title, Boolean completed) {
-        this.userId = userId;
-        this.id = id;
-        this.title = title;
-        this.completed = completed;
-    }
-
 
     @Override
     public String toString() {

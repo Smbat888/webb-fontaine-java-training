@@ -1,4 +1,4 @@
-package week6;
+package getjsonfromtheinternet;
 
 import com.google.gson.Gson;
 
@@ -31,22 +31,9 @@ public class GetJsonDataFromNetwork {
         initObjectsAsParameterFromJson();
     }
 
-    public static void ping() {
-        try {
-            URL url = new URL(PropertyFilePath.get());
-
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-            connection.setRequestMethod("GET");
-            connection.connect();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     private static void jsonFromNetwork() {
         try {
-            URL url = new URL(PropertyFilePath.get());
+            URL url = new URL(PropertyFilePath.getUrl());
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 

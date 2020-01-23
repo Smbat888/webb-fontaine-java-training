@@ -1,4 +1,4 @@
-package week5.fileio.homework;
+package fileio.fileio.homework;
 
 /**
  * Created by: Hmayak Atayan on 22 December, 2019

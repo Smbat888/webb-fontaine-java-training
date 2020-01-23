@@ -3,7 +3,6 @@ package classwork.networking;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import week6.User;
 
 import java.io.*;
 import java.net.HttpURLConnection;

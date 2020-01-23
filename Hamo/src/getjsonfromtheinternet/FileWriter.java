@@ -1,4 +1,4 @@
-package week6;
+package getjsonfromtheinternet;
 
 import java.io.File;
 import java.io.FileOutputStream;
