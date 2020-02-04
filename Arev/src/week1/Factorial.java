@@ -7,12 +7,13 @@ public class Factorial {
         Scanner num = new Scanner(System.in);
         System.out.println("Please print number for counting factorial: ");
         int number = num.nextInt();
-        System.out.println("Factorial for this number equal to  "+ factorial(number));
+        System.out.println("Factorial for this number equal to  " + factorial(number));
     }
-    public static double factorial(int number){
-        if ((number == 0)||(number == 1)){
+
+    public static double factorial(int number) {
+        if ((number == 0) || (number == 1)) {
             return 1;
         } else
-            return number*factorial(number-1);
+            return number * factorial(number - 1);
     }
 }

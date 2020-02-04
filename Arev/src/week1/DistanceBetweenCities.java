@@ -17,13 +17,15 @@ public class DistanceBetweenCities {
         intermediatePoint(x1, y1, x2, y2);
 
     }
-    public static void citydistance(double x1, double y1, double x2, double y2){
+
+    public static void citydistance(double x1, double y1, double x2, double y2) {
         double distance = Math.sqrt(Math.pow((x2 - x1), 2) - Math.pow((y2 - y1), 2));
         System.out.println("The length is " + distance);
     }
-    public static void intermediatePoint(double x1, double y1, double x2, double y2){
+
+    public static void intermediatePoint(double x1, double y1, double x2, double y2) {
         double x3 = (x2 - x1) / 2;
-        double y3 = (y2-y1) / 2;
+        double y3 = (y2 - y1) / 2;
         System.out.println("Latitude for intermediate point = " + x3);
         System.out.println("Longitude for intermediate point = " + y3);
     }

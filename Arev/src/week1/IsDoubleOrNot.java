@@ -1,4 +1,5 @@
 package week1;
+
 import java.util.Scanner;
 
 
@@ -8,12 +9,9 @@ public class IsDoubleOrNot {
 
         System.out.println("Enter number ");
 
-        if(scanner.hasNextDouble())
-        {
-            System.out.println("This number is double  " +scanner.nextDouble());
-        }
-        else
-        {
+        if (scanner.hasNextDouble()) {
+            System.out.println("This number is double  " + scanner.nextDouble());
+        } else {
             System.out.println("This is not a double number " + scanner.next());
         }
     }
