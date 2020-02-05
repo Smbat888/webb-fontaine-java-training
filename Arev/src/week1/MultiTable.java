@@ -3,7 +3,7 @@ package week1;
 import java.util.Scanner;
 
 /**
- Created by: Arev on Dec, 2019
+ * Created by: Arev on Dec, 2019
  **/
 
 
@@ -15,9 +15,9 @@ public class MultiTable {
         number = num.nextInt();
         System.out.println("Multiplication table of " + number);
 
-        for (int i = 1; i <= 10; i++){
+        for (int i = 1; i <= 10; i++) {
 
-            System.out.printf("%d * %d = %d \n",number,i,number*i);
+            System.out.printf("%d * %d = %d \n", number, i, number * i);
 
         }
     }
