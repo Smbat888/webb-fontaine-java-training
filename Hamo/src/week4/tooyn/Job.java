@@ -40,6 +40,6 @@ public class Job {
 
 
     public String toString() {
-        return String.format("%s,%s,%d", tittle, company,salary);
+        return String.format("%s,%s,%d", tittle, company, salary);
     }
 }
