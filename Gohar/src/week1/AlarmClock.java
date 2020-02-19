@@ -1,4 +1,4 @@
-package week1;
+package conditions1;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
