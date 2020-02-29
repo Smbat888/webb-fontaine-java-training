@@ -20,7 +20,7 @@ public class StreamTest {
         fruits.add(input1);
         fruits.add(input2);
         fruits.add(input3);
-        Enumeration<InputStream> fruitEnumeration = Collections.enumeration(fruits);
+        Enumeration<InputStream> fruitEnumeration = collections.enumeration(fruits);
         SequenceInputStream inst=new SequenceInputStream(fruitEnumeration);
         int j;
         while((j=inst.read())!=-1){
