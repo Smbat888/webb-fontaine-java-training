@@ -8,6 +8,7 @@ public class AppendElement {
         barer.add("text");
         barer.add("a");
         barer.add("b");
+        barer.addLast("FF");
 
         System.out.println(addElement("Hamo", barer));
     }
